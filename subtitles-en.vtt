@@ -1,0 +1,381 @@
+WEBVTT
+
+1
+00:00:10.150 --> 00:00:15.549
+The Big Data processing technologies provide
+ways to work with large sets of structured,
+
+2
+00:00:15.549 --> 00:00:21.610
+semi-structured, and unstructured data so
+that value can be derived from big data.
+
+3
+00:00:21.610 --> 00:00:27.130
+In some of the other videos, we discussed
+Big Data technologies such as NoSQL databases
+
+4
+00:00:27.130 --> 00:00:29.070
+and Data Lakes.
+
+5
+00:00:29.070 --> 00:00:33.850
+In this video, we are going to talk about
+three open source technologies and the role
+
+6
+00:00:33.850 --> 00:00:41.260
+they play in big data analytics — ApacheHadoop,
+Apache Hive, and Apache Spark.
+
+7
+00:00:41.260 --> 00:00:45.620
+Hadoop is a collection of tools that provides
+distributed storage and processing of big
+
+8
+00:00:45.620 --> 00:00:47.159
+data.
+
+9
+00:00:47.159 --> 00:00:53.780
+Hive is a data warehouse for data query and
+analysis built on top of Hadoop.
+
+10
+00:00:53.780 --> 00:01:00.119
+Spark is a distributed data analytics framework
+designed to perform complex data analytics
+
+11
+00:01:00.119 --> 00:01:01.500
+in real-time.
+
+12
+00:01:01.500 --> 00:01:07.400
+Hadoop, a java-based open-source framework,
+allows distributed storage and processing
+
+13
+00:01:07.400 --> 00:01:11.340
+of large datasets across clusters of computers.
+
+14
+00:01:11.340 --> 00:01:16.690
+In Hadoop distributed system, a node is a
+single computer, and a collection of nodes
+
+15
+00:01:16.690 --> 00:01:18.680
+forms a cluster.
+
+16
+00:01:18.680 --> 00:01:24.240
+Hadoop can scale up from a single node to
+any number of nodes, each offering local storage
+
+17
+00:01:24.240 --> 00:01:26.070
+and computation.
+
+18
+00:01:26.070 --> 00:01:31.400
+Hadoop provides a reliable, scalable, and
+cost-effective solution for storing data with
+
+19
+00:01:31.400 --> 00:01:34.200
+no format requirements.
+
+20
+00:01:34.200 --> 00:01:35.490
+Using Hadoop, you can:
+
+21
+00:01:35.490 --> 00:01:42.050
+Incorporate emerging data formats, such as
+streaming audio, video, social media sentiment,
+
+22
+00:01:42.050 --> 00:01:47.330
+and clickstream data, along with structured,
+semi-structured, and unstructured data not
+
+23
+00:01:47.330 --> 00:01:50.610
+traditionally used in a data warehouse.
+
+24
+00:01:50.610 --> 00:01:54.880
+Provide real-time, self-service access for
+all stakeholders.
+
+25
+00:01:54.880 --> 00:02:00.790
+Optimize and streamline costs in your enterprise
+data warehouse by consolidating data across
+
+26
+00:02:00.790 --> 00:02:06.979
+the organization and moving “cold” data,
+that is, data that is not in frequent use,
+
+27
+00:02:06.979 --> 00:02:09.280
+to a Hadoop-based system.
+
+28
+00:02:09.280 --> 00:02:15.650
+One of the four main components of Hadoop
+is Hadoop Distributed File System, or HDFS,
+
+29
+00:02:15.650 --> 00:02:20.709
+which is a storage system for big data that
+runs on multiple commodity hardware connected
+
+30
+00:02:20.709 --> 00:02:23.200
+through a network.
+
+31
+00:02:23.200 --> 00:02:29.939
+HDFS provides scalable and reliable big data
+storage by partitioning files over multiple
+
+32
+00:02:29.939 --> 00:02:30.939
+nodes.
+
+33
+00:02:30.939 --> 00:02:37.260
+It splits large files across multiple computers,
+allowing parallel access to them.
+
+34
+00:02:37.260 --> 00:02:42.459
+Computations can, therefore, run in parallel
+on each node where data is stored.
+
+35
+00:02:42.459 --> 00:02:47.519
+It also replicates file blocks on different
+nodes to prevent data loss, making it fault-tolerant.
+
+36
+00:02:47.519 --> 00:02:51.379
+Let’s understand this through an example.
+
+37
+00:02:51.379 --> 00:02:56.459
+Consider a file that includes phone numbers
+for everyone in the United States; the numbers
+
+38
+00:02:56.459 --> 00:03:03.209
+for people with last name starting with A
+might be stored on server 1, B on server 2,
+
+39
+00:03:03.209 --> 00:03:04.419
+and so on.
+
+40
+00:03:04.419 --> 00:03:09.059
+With Hadoop, pieces of this phonebook would
+be stored across the cluster.
+
+41
+00:03:09.059 --> 00:03:13.889
+To reconstruct the entire phonebook, your
+program would need the blocks from every server
+
+42
+00:03:13.889 --> 00:03:15.959
+in the cluster.
+
+43
+00:03:15.959 --> 00:03:22.689
+HDFS also replicates these smaller pieces
+onto two additional servers by default, ensuring
+
+44
+00:03:22.689 --> 00:03:25.659
+availability when a server fails,
+
+45
+00:03:25.659 --> 00:03:30.430
+In addition to higher availability, this offers
+multiple benefits.
+
+46
+00:03:30.430 --> 00:03:36.169
+It allows the Hadoop cluster to break up work
+into smaller chunks and run those jobs on
+
+47
+00:03:36.169 --> 00:03:39.419
+all servers in the cluster for better scalability.
+
+48
+00:03:39.419 --> 00:03:45.659
+Finally, you gain the benefit of data locality,
+which is the process of moving the computation
+
+49
+00:03:45.659 --> 00:03:49.199
+closer to the node on which the data resides.
+
+50
+00:03:49.199 --> 00:03:54.760
+This is critical when working with large data
+sets because it minimizes network congestion
+
+51
+00:03:54.760 --> 00:03:57.120
+and increases throughput.
+
+52
+00:03:57.120 --> 00:04:01.499
+Some of the other benefits that come from
+using HDFS include:
+
+53
+00:04:01.499 --> 00:04:07.939
+Fast recovery from hardware failures, because
+HDFS is built to detect faults and automatically
+
+54
+00:04:07.939 --> 00:04:09.329
+recover.
+
+55
+00:04:09.329 --> 00:04:14.949
+Access to streaming data, because HDFS supports
+high data throughput rates.
+
+56
+00:04:14.949 --> 00:04:21.670
+Accommodation of large data sets, because
+HDFS can scale to hundreds of nodes, or computers,
+
+57
+00:04:21.670 --> 00:04:23.630
+in a single cluster.
+
+58
+00:04:23.630 --> 00:04:30.090
+Portability, because HDFS is portable across
+multiple hardware platforms and compatible
+
+59
+00:04:30.090 --> 00:04:33.580
+with a variety of underlying operating systems.
+
+60
+00:04:33.580 --> 00:04:39.760
+Hive is an open-source data warehouse software
+for reading, writing, and managing large data
+
+61
+00:04:39.760 --> 00:04:45.980
+set files that are stored directly in either
+HDFS or other data storage systems such as
+
+62
+00:04:45.980 --> 00:04:48.370
+Apache HBase.
+
+63
+00:04:48.370 --> 00:04:54.110
+Hadoop is intended for long sequential scans
+and, because Hive is based on Hadoop, queries
+
+64
+00:04:54.110 --> 00:04:59.390
+have very high latency—which means Hive
+is less appropriate for applications that
+
+65
+00:04:59.390 --> 00:05:02.120
+need very fast response times.
+
+66
+00:05:02.120 --> 00:05:08.210
+Also, Hive is read-based, and therefore not
+suitable for transaction processing that typically
+
+67
+00:05:08.210 --> 00:05:12.449
+involves a high percentage of write operations.
+
+68
+00:05:12.449 --> 00:05:19.000
+Hive is better suited for data warehousing
+tasks such as ETL, reporting, and data analysis
+
+69
+00:05:19.000 --> 00:05:24.650
+and includes tools that enable easy access
+to data via SQL.
+
+70
+00:05:24.650 --> 00:05:29.990
+This brings us to Spark, a general-purpose
+data processing engine designed to extract
+
+71
+00:05:29.990 --> 00:05:35.960
+and process large volumes of data for a wide
+range of applications, including Interactive
+
+72
+00:05:35.960 --> 00:05:43.180
+Analytics, Streams Processing, Machine Learning,
+Data Integration, and ETL.
+
+73
+00:05:43.180 --> 00:05:48.960
+It takes advantage of in-memory processing
+to significantly increase the speed of computations
+
+74
+00:05:48.960 --> 00:05:53.040
+and spilling to disk only when memory is constrained.
+
+75
+00:05:53.040 --> 00:05:58.770
+Spark has interfaces for major programming
+languages, including Java, Scala, Python,
+
+76
+00:05:58.770 --> 00:06:00.740
+R, and SQL.
+
+77
+00:06:00.740 --> 00:06:06.849
+It can run using its standalone clustering
+technology as well as on top of other infrastructures
+
+78
+00:06:06.849 --> 00:06:08.379
+such as Hadoop.
+
+79
+00:06:08.379 --> 00:06:14.759
+And it can access data in a large variety
+of data sources, including HDFS and Hive,
+
+80
+00:06:14.759 --> 00:06:18.169
+making it highly versatile.
+
+81
+00:06:18.169 --> 00:06:24.120
+The ability to process streaming data fast
+and perform complex analytics in real-time
+
+82
+00:06:24.120 --> 00:06:26.509
+is the key use case for Apache Spark.
